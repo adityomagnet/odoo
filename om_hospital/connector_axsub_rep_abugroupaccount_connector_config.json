@@ -1,0 +1,25 @@
+{
+  "name": "axsub_rep_abugroupaccount_connector",
+  "config": {
+    "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+    "tasks.max": "1",
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "transforms.unwrap.delete.handling.mode": "none",
+    "transforms.unwrap.drop.tombstones": "false",
+    "topic.prefix": "AXSUB_REP",
+    "database.names": "AXSUB_REP",
+    "database.hostname": "10.0.102.172",
+    "database.port": "1433",
+    "database.user": "adminpub",
+    "database.password": "4RADrDtd",
+    "decimal.handling.mode": "string",
+    "time.precision.mode": "connect",
+    "schema.history.internal": "io.debezium.storage.file.history.FileSchemaHistory",
+    "table.include.list": "dbo.ABUGROUPACCOUNT",
+    "database.encrypt": "false",
+    "database.history.kafka.bootstrap.servers": "http://localhost:9092",
+    "database.history.kafka.topic": "axsub-schema-changes-abugroupaccount.sqlserver",
+    "schema.history.internal.file.filename": "/etc/schema-history/axsub_rep_schemahistory_abugroupaccount.dat"
+  }
+}
